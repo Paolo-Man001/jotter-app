@@ -2,6 +2,7 @@ package com.paolomanlunas.jotter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
@@ -16,9 +17,10 @@ class MainActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       // setContentView(R.layout.activity_main)
-      binding = ActivityMainBinding.inflate(layoutInflater)
-      val view = binding.root
-      setContentView(view)
+//      binding = ActivityMainBinding.inflate(layoutInflater)
+//      val view = binding.root
+//      setContentView(view)
+       binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
       // App Center:
       AppCenter.start(
