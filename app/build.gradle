@@ -33,7 +33,12 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    // Added Custom dependencies:
+    //---- CUSTOM DEPENDENCIES:
+
+    // App-Center
+    def appCenterSdkVersion = '3.2.1'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 
     // LiveData & ViewModel
     def lifecycle_version = "2.2.0"
