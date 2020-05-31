@@ -1,4 +1,4 @@
-package com.paolomanlunas.jotter
+package com.paolomanlunas.jotter.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
