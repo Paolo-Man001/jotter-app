@@ -2,14 +2,16 @@ package com.paolomanlunas.jotter
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.paolomanlunas.jotter.adapter.ItemListAdapter
 import com.paolomanlunas.jotter.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +26,12 @@ class MainActivity : AppCompatActivity() {
          application, "b662e675-0625-41d9-8c89-90c16029d398",
          Analytics::class.java, Crashes::class.java
       )
+
+      // Recycler View
+      val recyclerView = recyclerview
+      val adapter = ItemListAdapter(this)
+      recyclerView.adapter = adapter
+      recyclerView.layoutManager = LinearLayoutManager(this)
 
       // FAB
       binding.fabCreate.setOnClickListener {
