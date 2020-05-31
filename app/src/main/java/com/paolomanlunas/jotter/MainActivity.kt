@@ -19,13 +19,11 @@ class MainActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       // setContentView(R.layout.activity_main)
       binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-      // App Center:
-      AppCenter.start(
+      Timber.d("onCreate CALLED!")  // Logging
+      AppCenter.start(                       // App Center
          application, "b662e675-0625-41d9-8c89-90c16029d398",
          Analytics::class.java, Crashes::class.java
       )
-//      Timber.d("onCreate CALLED!")  // Logging
 
       // FAB
       binding.fabCreate.setOnClickListener {
