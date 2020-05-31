@@ -54,6 +54,9 @@ dependencies {
     // Logging Lib
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
+    // Recycler View
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
     // App-Center
     def appCenterSdkVersion = '3.2.1'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"

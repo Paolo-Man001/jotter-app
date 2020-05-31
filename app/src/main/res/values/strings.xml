@@ -5,4 +5,5 @@
     <string name="add_new_item_header">Jot New Item</string>
     <string name="hint_title">Title</string>
     <string name="hint_description">Description</string>
+    <string name="list_header">Your List</string>
 </resources>
