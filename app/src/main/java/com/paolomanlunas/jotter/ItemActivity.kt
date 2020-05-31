@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.paolomanlunas.jotter.databinding.ActivityItemBinding
+import timber.log.Timber
 
 class ItemActivity : AppCompatActivity() {
    lateinit var binding: ActivityItemBinding
@@ -14,6 +15,7 @@ class ItemActivity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       binding = DataBindingUtil.setContentView(this, R.layout.activity_item)
+      Timber.d("onCreate CALLED !!!")
 
       binding.fabSubmitItem.setOnClickListener {
          Toast.makeText(this,"Adding New Item", Toast.LENGTH_SHORT).show()
@@ -24,5 +26,6 @@ class ItemActivity : AppCompatActivity() {
    private fun addNewItem(view: View) {
       val intent = Intent(this, MainActivity::class.java)
       startActivity(intent)
+      finish()
    }
 }

@@ -1,10 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+
+    // to exclude the atomic functions module from the package and prevent warnings.
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
 
     defaultConfig {
         applicationId "com.paolomanlunas.jotter"
@@ -54,8 +61,21 @@ dependencies {
 
     // LiveData & ViewModel
     def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // Room components
+    def roomVersion = '2.2.5'
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Coroutines
+    def coroutine_version = '1.3.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
 
     // Tests
     testImplementation 'junit:junit:4.12'
