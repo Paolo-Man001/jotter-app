@@ -17,8 +17,8 @@ class JotViewModel(application: Application) : AndroidViewModel(application) {
    val allItems: LiveData<List<JotItem>>
 
    init {
-      val jotDao = JotDb.getDatabase(application).jotDao
-      repository = JotRepository(jotDao)
+      val jotsDao = JotDb.getDatabase(application, viewModelScope).jotDao()
+      repository = JotRepository(jotsDao)
       allItems = repository.allItems
    }
 
