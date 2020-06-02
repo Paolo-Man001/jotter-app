@@ -29,7 +29,8 @@ abstract class JotDb : RoomDatabase() {
                jotDao.clear()
 
                // Add sample-data:
-               var item = JotItem(itemTitle = "First Title", itemDesc = "First Description")
+//               var item = JotItem(itemTitle = "First Title", itemDesc = "First Description")
+               var item = JotItem("First Title", "First Description")
                jotDao.insert(item)
 
                item = JotItem(itemTitle = "Second Title", itemDesc = "Second Description")
