@@ -29,8 +29,8 @@ abstract class JotDb : RoomDatabase() {
                jotDao.clear()
 
                // Add sample-data:
-//               var item = JotItem(itemTitle = "First Title", itemDesc = "First Description")
-               var item = JotItem("First Title", "First Description")
+               var item = JotItem(itemTitle = "First Title", itemDesc = "First Description")
+//               var item = JotItem("First Title", "First Description")
                jotDao.insert(item)
 
                item = JotItem(itemTitle = "Second Title", itemDesc = "Second Description")
@@ -70,21 +70,3 @@ abstract class JotDb : RoomDatabase() {
       }
    }
 }
-
-/* OLD:
-* synchronized(this) {
-            var instance = INSTANCE
-
-            if (instance == null) {
-               instance = Room.databaseBuilder(
-                  context.applicationContext,
-                  JotDb::class.java,
-                  "jot_database"
-               )
-                  .addCallback(JotDbCallback(scope))
-                  .build()
-               INSTANCE = instance
-            }
-            return instance
-         }
-* */
