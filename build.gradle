@@ -7,11 +7,13 @@ buildscript {
         jcenter()
         
     }
+
+    def nav_version = "2.3.0-beta01"
+
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // Safe-Args:: for Type-Safety :
-        def nav_version = "2.3.0-beta01"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
         // NOTE: Do not place your application dependencies here; they belong
