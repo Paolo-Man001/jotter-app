@@ -8,10 +8,13 @@ import androidx.room.PrimaryKey
 data class JotItem(
    @PrimaryKey(autoGenerate = true)
    val itemId: Long = 0L,
-
+   
    @ColumnInfo(name = "title")
    val itemTitle: String,
 
    @ColumnInfo(name = "description")
    val itemDesc: String
-)
+) {
+//   @PrimaryKey(autoGenerate = true)
+//   val itemId: Long = 0L
+}
